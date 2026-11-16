@@ -1,76 +1,122 @@
+
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 40px auto;
-  background: white;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #1c1930;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
-.welcome-title {
-  color: #6e25eb;
-  margin-top: 20px;
+.intro {
+  margin: 25px 0;
+  text-align: center;
 }
 
-.personal-info {
-  margin-top: 10px;
-  line-height: 1.8;
+.intro h2 {
+  color: #b58aff;
+  margin-bottom: 12px;
+}
+
+.intro p {
+  color: #d1cce0;
+  line-height: 1.6;
 }
 
 .search-input {
   width: 100%;
-  padding: 12px;
-  margin: 25px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 14px;
+  margin: 20px 0;
+  border: 2px solid #7044c5;
+  border-radius: 8px;
+  background: #292440;
+  color: white;
   font-size: 16px;
+}
+
+.search-input::placeholder {
+  color: #bdb5d0;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #b58aff;
+}
+
+.game-count {
+  color: #bdb5d0;
+  margin-bottom: 15px;
 }
 
 .game-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
   margin-top: 20px;
 }
 
 .game-card {
-  background: #f5f5f5;
+  background: #292440;
   padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.2s;
+  border: 1px solid #443765;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .game-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .game-card h2 {
-  color: #6e25eb;
-  margin-bottom: 10px;
+  color: #b58aff;
+  margin-bottom: 15px;
 }
 
-.game-card p {
-  margin-bottom: 8px;
+.game-info p {
+  margin-bottom: 10px;
+  color: #e0dbea;
+  font-size: 14px;
 }
 
 .game-image {
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
 .favorite-button {
-  background-color: #6e25eb;
+  background: #7044c5;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  padding: 11px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 12px;
+  font-size: 14px;
+  transition: background 0.2s;
 }
 
 .favorite-button:hover {
-  background-color: #5018b5;
+  background: #9165e5;
+}
+
+.no-results {
+  color: #d1cce0;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 18px;
+  }
+
+  .game-list {
+    grid-template-columns: 1fr;
+  }
 }

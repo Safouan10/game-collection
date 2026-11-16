@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 function GameCard(props) {
@@ -15,10 +16,14 @@ function GameCard(props) {
 
       <h2>{props.title}</h2>
 
-      <p>Platform: {props.platform}</p>
-      <p>Genre: {props.genre}</p>
-      <p>Beoordeling: {props.rating}/10</p>
-      <p>Jaar: {props.year}</p>
+      <div className="game-info">
+        <p><strong>Platform:</strong> {props.platform}</p>
+        <p><strong>Genre:</strong> {props.genre}</p>
+        <p><strong>Beoordeling:</strong> {props.rating}/10</p>
+        <p><strong>Jaar:</strong> {props.year}</p>
+        <p><strong>Developer:</strong> {props.developer}</p>
+        <p><strong>Multiplayer:</strong> {props.multiplayer}</p>
+      </div>
 
       <button
         className="favorite-button"

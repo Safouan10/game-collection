@@ -1,3 +1,4 @@
+
 [
   {
     "id": 1,
@@ -6,6 +7,8 @@
     "genre": "Sandbox",
     "rating": 9,
     "year": 2011,
+    "developer": "Mojang Studios",
+    "multiplayer": "Ja",
     "image": "minecraft.png"
   },
   {
@@ -15,6 +18,8 @@
     "genre": "Racing",
     "rating": 9,
     "year": 2017,
+    "developer": "Nintendo",
+    "multiplayer": "Ja",
     "image": ""
   },
   {
@@ -24,6 +29,8 @@
     "genre": "Sports",
     "rating": 8,
     "year": 2015,
+    "developer": "Psyonix",
+    "multiplayer": "Ja",
     "image": ""
   },
   {
@@ -33,6 +40,8 @@
     "genre": "Battle Royale",
     "rating": 8,
     "year": 2017,
+    "developer": "Epic Games",
+    "multiplayer": "Ja",
     "image": ""
   },
   {
@@ -42,6 +51,8 @@
     "genre": "Adventure",
     "rating": 10,
     "year": 2017,
+    "developer": "Nintendo",
+    "multiplayer": "Nee",
     "image": ""
   },
   {
@@ -51,6 +62,8 @@
     "genre": "Sports",
     "rating": 8,
     "year": 2025,
+    "developer": "EA Sports",
+    "multiplayer": "Ja",
     "image": ""
   },
   {
@@ -60,6 +73,8 @@
     "genre": "Action",
     "rating": 9,
     "year": 2013,
+    "developer": "Rockstar Games",
+    "multiplayer": "Ja",
     "image": ""
   }
 ]

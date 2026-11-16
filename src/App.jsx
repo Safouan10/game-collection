@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import games from "./data/games.json";
 import Header from "./components/Header";
@@ -8,29 +9,40 @@ import "./App.css";
 function App() {
   const [search, setSearch] = useState("");
 
-  const filteredGames = games.filter((game) =>
-    game.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredGames = games.filter((game) => {
+    const searchText = search.toLowerCase();
+
+    return (
+      game.title.toLowerCase().includes(searchText) ||
+      game.genre.toLowerCase().includes(searchText) ||
+      game.platform.toLowerCase().includes(searchText) ||
+      game.developer.toLowerCase().includes(searchText)
+    );
+  });
 
   return (
     <div className="container">
-      <Header title="🎮 Game Collection" />
+      <Header title="🎮 My Game Universe" />
 
-      <h2 className="welcome-title">Welkom bij mijn Game Collection!</h2>
-
-      <p className="personal-info">
-        Mijn naam: Safouan
-        <br />
-        Mijn klas: 25b
-      </p>
+      <section className="intro">
+        <h2>Welkom in mijn Game Universe!</h2>
+        <p>
+          Ontdek mijn favoriete games, bekijk de informatie en zoek
+          eenvoudig naar jouw favoriete spel.
+        </p>
+      </section>
 
       <input
         type="text"
         className="search-input"
-        placeholder="Zoek een game..."
+        placeholder="Zoek op titel, genre, platform of developer..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+
+      <p className="game-count">
+        {filteredGames.length} games gevonden
+      </p>
 
       <div className="game-list">
         {filteredGames.length > 0 ? (
@@ -42,11 +54,13 @@ function App() {
               genre={game.genre}
               rating={game.rating}
               year={game.year}
+              developer={game.developer}
+              multiplayer={game.multiplayer}
               image={game.image}
             />
           ))
         ) : (
-          <p>Geen games gevonden.</p>
+          <p className="no-results">Geen games gevonden.</p>
         )}
       </div>
 
