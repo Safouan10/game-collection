@@ -1,40 +1,40 @@
-
 import { useState } from "react";
-import "./App.css";
+import games from "./data/games.json";
 import Header from "./components/Header";
 import GameCard from "./components/GameCard";
 import Footer from "./components/Footer";
-import games from "./data/games.json";
+import "./App.css";
 
 function App() {
   const [search, setSearch] = useState("");
+
+  const filteredGames = games.filter((game) =>
+    game.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="container">
       <Header title="🎮 Game Collection" />
 
-      <div className="games">
-        <h2>Welkom bij mijn eerste React-applicatie!</h2>
+      <h2 className="welcome-title">Welkom bij mijn Game Collection!</h2>
 
-        <p>Naam: Safouan</p>
-        <p>Studentnummer: 2217279</p>
-        <p>Klas: 25B</p>
-      </div>
+      <p className="personal-info">
+        Mijn naam: Safouan
+        <br />
+        Mijn klas: 25b
+      </p>
+
+      <input
+        type="text"
+        className="search-input"
+        placeholder="Zoek een game..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
       <div className="game-list">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Zoek een game..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-
-        {games
-          .filter((game) =>
-            game.title.toLowerCase().includes(search.toLowerCase())
-          )
-          .map((game) => (
+        {filteredGames.length > 0 ? (
+          filteredGames.map((game) => (
             <GameCard
               key={game.id}
               title={game.title}
@@ -42,8 +42,12 @@ function App() {
               genre={game.genre}
               rating={game.rating}
               year={game.year}
+              image={game.image}
             />
-          ))}
+          ))
+        ) : (
+          <p>Geen games gevonden.</p>
+        )}
       </div>
 
       <Footer />

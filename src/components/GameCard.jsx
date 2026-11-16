@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 function GameCard(props) {
@@ -6,11 +5,19 @@ function GameCard(props) {
 
   return (
     <div className="game-card">
+      {props.image && (
+        <img
+          src={`/images/${props.image}`}
+          alt={`AI-gemaakte poster voor ${props.title}`}
+          className="game-image"
+        />
+      )}
+
       <h2>{props.title}</h2>
 
       <p>Platform: {props.platform}</p>
       <p>Genre: {props.genre}</p>
-      <p>Rating: ⭐ {props.rating}</p>
+      <p>Beoordeling: {props.rating}/10</p>
       <p>Jaar: {props.year}</p>
 
       <button
